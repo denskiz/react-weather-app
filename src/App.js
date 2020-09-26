@@ -31,10 +31,17 @@ const App = () => {
         <Loading />
       ) : (
         <Weather
-          currentWeather={data.currentWeather}
-          location={data.location}
-          localTime={data.localTime}
+          weather={data.weather}
+          cityName={data.cityName}
+          temp={data.temp}
+          minTemp={data.tempMin}
+          maxTemp={data.tempMax}
+          sunrise={data.sunrise}
+          sunset={data.sunset}
+          cloudiness={data.cloudiness}
           forecastWeather={data.forecast}
+          windSpeed={data.windSpeed}
+          humidity={data.humidity}
         />
       )}
       <div className="text-center" id="source-code">
