@@ -4,11 +4,9 @@ Shows current weather information in your area.
 
 ## Technologies used
 
-React, Font Awesome, and Bootstrap 5 Alpha, Open Weather Map API
+React, Font Awesome, and Bootstrap 5 Alpha, Open Weather Map API, Geolocation API
 
 ## Links
-
-https://grantwilliams.github.io/freecodecamp-local-weather
 
 https://v5.getbootstrap.com/
 
