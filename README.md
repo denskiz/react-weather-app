@@ -1,6 +1,6 @@
 # React Weather App
 
-Gives current weather information in your area.
+Shows current weather information in your area.
 
 ## Technologies used
 
@@ -16,7 +16,7 @@ https://openweathermap.org/current
 
 ## Currently Working On
 
-Update the API call in api.js to the new API
+Search Bar
 
 ## Notes
 

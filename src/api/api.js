@@ -73,11 +73,6 @@ let api = {
         backgroundImage: getBackgroundImage(data.weather[0].id),
         humidity: data.main.humidity,
       };
-      // let backgroundToUse = api.getBackgroundImage(
-      //   data.current.weather_code,
-      //   timeOfDay
-      // );
-      // console.log(data);
 
       return newState;
     }

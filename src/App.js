@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { CSSTransitionGroup } from "react-transition-group";
 // import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import Header from "./components/Header";
 import Loading from "./components/Loading";
@@ -30,19 +31,25 @@ const App = () => {
       {data.isLoading ? (
         <Loading />
       ) : (
-        <Weather
-          weather={data.weather}
-          cityName={data.cityName}
-          temp={data.temp}
-          minTemp={data.tempMin}
-          maxTemp={data.tempMax}
-          sunrise={data.sunrise}
-          sunset={data.sunset}
-          cloudiness={data.cloudiness}
-          forecastWeather={data.forecast}
-          windSpeed={data.windSpeed}
-          humidity={data.humidity}
-        />
+        <CSSTransitionGroup
+          transitionName="weather"
+          transitionEnterTimeout={1500}
+          transitionLeaveTimeout={1500}
+        >
+          <Weather
+            weather={data.weather}
+            cityName={data.cityName}
+            temp={data.temp}
+            minTemp={data.tempMin}
+            maxTemp={data.tempMax}
+            sunrise={data.sunrise}
+            sunset={data.sunset}
+            cloudiness={data.cloudiness}
+            forecastWeather={data.forecast}
+            windSpeed={data.windSpeed}
+            humidity={data.humidity}
+          />
+        </CSSTransitionGroup>
       )}
       <div className="text-center" id="source-code">
         <a href="https://github.com/denskiz/react-weather-app" target="_blank">

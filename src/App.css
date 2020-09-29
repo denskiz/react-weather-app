@@ -10,7 +10,7 @@ body {
   @extend html;
   background-size: 100% auto;
   background-color: #202020;
-  font-family: Abel, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: Abel, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 100%;
   color: #ffffff;
   text-shadow: 0 0 10px #000000;
@@ -48,4 +48,31 @@ body {
 
 #source-code {
   margin-bottom: 20px;
+}
+
+.weather-appear {
+  opacity: 0.01;
+}
+
+.weather-appear.weather-appear-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+
+.weather-enter {
+  opacity: 0.01;
+}
+
+.weather-enter.weather-enter-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+
+.weather-leave {
+  opacity: 1;
+}
+
+.weather-leave.weather-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
