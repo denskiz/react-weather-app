@@ -21,14 +21,20 @@ function Unix_timestamp(t) {
   return hr + ":" + m.substr(-2) + ":" + s.substr(-2);
 }
 
+
+// https://openweathermap.org/weather-conditions
 function getBackgroundImage(conditionCode) {
   let backgroundToUse;
-  if (conditionCode < 230) {
-    backgroundToUse = "https://i.imgur.com/0cuXyGR.jpg";
+  // Thunderstorm
+  if (conditionCode < 233) {
+    backgroundToUse = "https://i.imgur.com/D0S3rsW.jpg";
+    // drizzle weather
   } else if (conditionCode > 299 && conditionCode < 330) {
-    backgroundToUse = "https://imgur.com/eybNm6u";
+    backgroundToUse = "https://i.imgur.com/48J1B7y.jpg";
+    // rain
   } else if (conditionCode > 499 && conditionCode < 532) {
-    backgroundToUse = "https://i.imgur.com/G9Ikmxe.jpg";
+    backgroundToUse = "https://i.imgur.com/Wg1xtgH.jpg";
+    // Snow
   } else if (conditionCode > 599 && conditionCode < 623) {
     backgroundToUse = "https://i.imgur.com/F6kInOS.jpg";
   } else if (conditionCode > 700 && conditionCode < 782) {
@@ -58,7 +64,7 @@ let api = {
       const sunrise = Unix_timestamp(data.sys.sunrise);
       const sunset = Unix_timestamp(data.sys.sunset);
 
-      console.log(data);
+      
       let newState = {
         temp: data.main.temp,
         tempMin: data.main.temp_min,
@@ -73,6 +79,7 @@ let api = {
         backgroundImage: getBackgroundImage(data.weather[0].id),
         humidity: data.main.humidity,
       };
+      console.log(data.weather[0].id)
 
       return newState;
     }
