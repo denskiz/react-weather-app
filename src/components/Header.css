@@ -1,0 +1,26 @@
+#title-text {
+  font-size: 4em;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  #title-text {
+    font-size: 4em;
+  }
+  #sub-title {
+    font-size: $sub-title-size;
+  }
+  h3 {
+    font-size: 1.8em;
+  }
+  #time {
+    font-size: 1.4em;
+  }
+  .forecast-temperature {
+    font-size: 1.2em;
+  }
+  #temperature {
+    font-size: 2em;
+  }
+  .detail-box {
+    font-size: 1.2em;
+  }
+}

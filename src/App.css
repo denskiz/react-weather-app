@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+html {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  @extend html;
+  background-size: 100% auto;
+  background-color: #202020;
+  font-family: Abel, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 100%;
+  color: #ffffff;
+  text-shadow: 0 0 10px #000000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#app {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#main-wrapper {
+  height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+#background {
+  height: 100%;
+  width: 100%;
+  z-index: -100;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.loading {
+  flex-grow: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#source-code {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-appear {
+  opacity: 0.01;
+}
+
+.weather-appear.weather-appear-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+
+.weather-enter {
+  opacity: 0.01;
+}
+
+.weather-enter.weather-enter-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+
+.weather-leave {
+  opacity: 1;
+}
+
+.weather-leave.weather-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
